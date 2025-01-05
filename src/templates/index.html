@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume and Job Description Matcher</title>
+</head>
+<body>
+    <h1>Upload Resume and Job Description</h1>
+    <form action="/process" method="POST" enctype="multipart/form-data">
+        <label for="resume">Upload Resume PDF:</label>
+        <input type="file" name="resume" id="resume" accept="application/pdf" required><br><br>
+
+        <label for="jd">Upload Job Description PDF:</label>
+        <input type="file" name="jd" id="jd" accept="application/pdf" required><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <h2>Matched Skills:</h2>
+    {% for skill in matched_skills %}
+        <li>{{ skill }}</li>
+    {% endfor %}
+</body>
+</html>
